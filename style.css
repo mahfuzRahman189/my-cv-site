@@ -1,0 +1,235 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-bg: #0A2647;
+    --secondary-bg: #1C3F6E;
+    --primary-text: #E0E0E0;
+    --secondary-text: #D0D0D0;
+    --accent-gold: #FFD24C;
+    --accent-blue: #89CFF0;
+    --link-color: #89CFF0;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    font-family: 'Tahoma', 'Geneva', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.cv-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    margin: 10px 0;
+}
+
+ul {
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* --- Header --- */
+.header {
+    background-color: var(--secondary-bg);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.header-main {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+    justify-content: center; /* Center on small screens */
+    text-align: center; /* Center text on small screens */
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-gold);
+}
+
+.header-text h1 {
+    font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+    color: var(--accent-gold);
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.header-text .titles {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+.header-text .titles span {
+    display: inline-block;
+    margin: 2px 0;
+}
+
+
+.contact-info {
+    background-color: var(--primary-bg);
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow items to wrap on small screens */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* --- Main Content Layout --- */
+.main-content {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.left-column {
+    flex: 2; /* Takes up 2/3 of the space */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-column {
+    flex: 1; /* Takes up 1/3 of the space */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- Reusable Card Component --- */
+.card {
+    background-color: var(--secondary-bg);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.card h2 {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+    color: var(--primary-text);
+}
+
+.card h3 {
+    font-family: 'Verdana', Geneva, sans-serif;
+    margin: 10px 0 5px 0;
+    font-size: 1.1rem;
+}
+
+.card p, .card li {
+    color: var(--secondary-text);
+    line-height: 1.6;
+}
+
+/* Card Specific Styles */
+.about-me, .projects {
+    border-left: 5px solid var(--accent-gold);
+}
+
+.about-me hr, .projects hr {
+    background-color: var(--accent-gold);
+}
+
+.skills, .education {
+    border-left: 5px solid var(--accent-blue);
+}
+
+.skills hr, .education hr {
+    background-color: var(--accent-blue);
+}
+
+.project-item {
+    margin-bottom: 20px;
+}
+
+.project-item:last-child {
+    margin-bottom: 0;
+}
+
+.tech-stack {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--accent-gold) !important;
+    font-size: 0.9rem;
+}
+
+.skill-category {
+    margin-bottom: 15px;
+}
+
+.education .institution {
+    color: var(--secondary-text);
+}
+
+.education .duration {
+    font-style: italic;
+    color: #B0B0B0;
+    font-size: 0.9em;
+}
+
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+footer hr {
+    width: 50%;
+    background-color: var(--secondary-bg);
+}
+
+footer p {
+    font-family: 'Courier New', Courier, monospace;
+    color: #A0A0A0;
+    font-size: 0.9rem;
+}
+
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column; /* Stack columns on top of each other */
+    }
+    
+    .header-main {
+        flex-direction: column; /* Stack profile pic and name */
+        text-align: center;
+    }
+
+    .header-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .contact-info {
+        flex-direction: column; /* Stack contact items */
+        gap: 10px;
+    }
+}
